@@ -10392,7 +10392,7 @@ namespace vkroots {
   template <typename InstanceOverrides, typename DeviceOverrides>
   static VkResult wrap_QueuePresentKHR(VkQueue queue, const VkPresentInfoKHR *pPresentInfo) {
     const VkQueueDispatch* dispatch = LookupDispatch(queue);
-    VkResult ret = DeviceOverrides::QueuePresentKHR(*dispatch, queue, pPresentInfo);
+    VkResult ret = DeviceOverrides::QueuePresentKHR(dispatch, queue, pPresentInfo);
     return ret;
   }
 
